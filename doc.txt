@@ -1,0 +1,33 @@
+https://github.com/UB-Mannheim/tesseract/wiki
+
+Untuk mengubah gambar menjadi tulisan dengan Python, kita dapat menggunakan kombinasi dari dua perpustakaan populer: OpenCV untuk memuat dan memproses gambar, dan pytesseract untuk melakukan OCR (Optical Character Recognition) pada gambar. Pastikan Anda menginstal pustaka ini terlebih dahulu:
+
+sh
+Copy code
+pip install opencv-python pytesseract
+Anda juga perlu menginstal Tesseract OCR secara manual di sistem Anda. Jika Anda menggunakan Windows, unduh dan instal Tesseract dari tautan berikut: Tesseract OCR. Setelah itu, pastikan untuk menyertakan path instalasi Tesseract di kode Python Anda.
+
+Berikut adalah contoh kode untuk mengubah gambar menjadi tulisan:
+
+python
+Copy code
+import cv2
+import pytesseract
+
+# Path ke tesseract di sistem Anda (sesuaikan jika perlu)
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+
+Import Library:
+
+cv2 dari OpenCV digunakan untuk memuat dan memproses gambar.
+pytesseract digunakan untuk OCR (mengubah gambar menjadi teks).
+Konfigurasi Path Tesseract:
+
+Tentukan path instalasi tesseract.exe agar Python bisa menggunakan OCR.
+Fungsi gambar_ke_tulisan:
+
+Membaca gambar (cv2.imread) dan mengubahnya ke dalam skala abu-abu (cv2.cvtColor) untuk memudahkan pemrosesan OCR.
+Menggunakan pytesseract.image_to_string untuk mengubah gambar menjadi teks.
+Pemanggilan Fungsi:
+
+Gambar yang diinputkan (gambar_path) diubah menjadi teks, kemudian hasilnya ditampilkan ke layar.
